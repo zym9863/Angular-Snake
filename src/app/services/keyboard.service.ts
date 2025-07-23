@@ -51,7 +51,7 @@ export class KeyboardService {
       .pipe(
         takeUntil(this.destroy$),
         filter(event => !event.repeat), // 防止按键重复
-        map(event => event.code || event.key)
+        map(event => event.key || event.code)
       )
       .subscribe(key => {
         this.handleKeyPress(key);
