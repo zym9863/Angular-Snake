@@ -1,59 +1,125 @@
-# AngularSnake
+# Angular Snake Game / Angular 贪吃蛇游戏
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+**语言 / Language:** [中文](README.md) | [English](README_EN.md)
 
-## Development server
+一个使用 Angular 20.1.0 构建的现代贪吃蛇游戏，采用独立组件、信号（Signals）和响应式编程模式。
 
-To start a local development server, run:
+A modern Snake game built with Angular 20.1.0, featuring standalone components, signals, and reactive programming patterns.
+
+## 功能特性 / Features
+
+- 🎮 **现代 Angular 架构** - 使用独立组件和 Angular Signals
+- 📱 **响应式设计** - 支持桌面和移动设备
+- ⌨️ **多种控制方式** - 键盘 (方向键/WASD) 和触摸控制
+- 🏆 **分数系统** - 实时分数追踪和最高分记录
+- 🎯 **渐进难度** - 随等级提升游戏速度
+- 🎨 **现代 UI** - 深色主题，渐变效果和动画
+- 💾 **数据持久化** - 最高分本地存储
+- 🌐 **中文界面** - 完整的中文本地化
+
+## 项目结构 / Project Structure
+
+```
+src/
+├── app/
+│   ├── components/          # 游戏组件
+│   │   ├── snake-game/      # 主游戏容器组件
+│   │   ├── game-board/      # Canvas 游戏画板
+│   │   ├── game-controls/   # 游戏控制按钮
+│   │   └── scoreboard/      # 分数显示面板
+│   ├── models/              # 数据模型和接口
+│   │   └── game.models.ts   # 游戏状态、蛇、食物等模型
+│   ├── services/            # 业务逻辑服务
+│   │   ├── game.service.ts  # 核心游戏逻辑
+│   │   └── keyboard.service.ts # 键盘输入处理
+│   ├── app.config.ts        # 应用配置
+│   └── app.routes.ts        # 路由配置
+└── styles.scss              # 全局样式
+```
+
+## 技术栈 / Tech Stack
+
+- **Angular** 20.1.0 - 前端框架
+- **TypeScript** 5.8.2 - 类型安全
+- **RxJS** 7.8.0 - 响应式编程
+- **SCSS** - 样式预处理器
+- **HTML5 Canvas** - 游戏渲染
+
+## 开始使用 / Getting Started
+
+### 环境要求 / Prerequisites
+
+- Node.js 18+ 
+- Angular CLI 20.1.1+
+
+### 安装依赖 / Installation
+
+```bash
+npm install
+```
+
+### 开发服务器 / Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+访问 `http://localhost:4200/` 查看游戏。文件修改后会自动重新加载。
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### 构建项目 / Build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+构建文件将输出到 `dist/` 目录。
 
-## Running unit tests
+## 游戏控制 / Game Controls
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 键盘控制 / Keyboard Controls
+- **方向键 / WASD** - 控制蛇的移动方向
+- **空格键 / ESC** - 暂停/继续游戏
+- **Enter** - 开始游戏
+- **R** - 重新开始
 
-```bash
-ng test
-```
+### 移动端控制 / Mobile Controls
+- **方向按钮** - 屏幕上的触摸控制
+- **控制按钮** - 开始/暂停/重启
 
-## Running end-to-end tests
+## 核心特性实现 / Core Features
 
-For end-to-end (e2e) testing, run:
+### 游戏状态管理
+- 使用 Angular Signals 进行响应式状态管理
+- RxJS 实现游戏循环和事件处理
 
-```bash
-ng e2e
-```
+### 碰撞检测
+- 墙壁碰撞检测
+- 蛇身自碰撞检测
+- 食物碰撞检测
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 渲染系统
+- HTML5 Canvas 高效渲染
+- 网格布局系统
+- 蛇头眼睛和食物高亮效果
 
-## Additional Resources
+### 响应式设计
+- 移动优先的 CSS 设计
+- 触摸友好的控制界面
+- 自适应画布尺寸
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 开发说明 / Development
+
+本项目采用现代 Angular 开发模式：
+
+- **独立组件** - 无需 NgModule
+- **信号系统** - 替代传统的 Subject/Observable 模式
+- **输入/输出装饰器** - 使用新语法
+- **类型安全** - 完整的 TypeScript 类型定义
+
+## 许可证 / License
+
+MIT License
+
+## 贡献 / Contributing
+
+欢迎提交 Issue 和 Pull Request 来改进这个项目。
